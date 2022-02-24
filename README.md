@@ -1,2 +1,43 @@
 # order_system
 大三下春季学期项目实训
+
+
+
+使用方式
+
+1. git clone git@github.com:Imagine9575/order_system.git
+2. idea 中 project structure 更改为 jdk1.8
+3. new module
+   1. 选择 spring initializer
+   2. 选择 jdk1.8
+   3. 更改 module 中 pom.xml（样例如下）
+      1. 更改 artifactId 标签为项目名称（12 行）
+      2. 父项目 modules 标签中添加 <module>项目名称</module>
+
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>order-system</artifactId>
+        <groupId>com.example</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>demo</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+    </dependencies>
+
+</project>
+```
+
