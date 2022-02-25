@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="(1)添加了JsonResponse封装类&#10;(2)配置了properties">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/controller/FoodController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/FoodOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/Notice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/NoticeUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/TOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/mapper/FoodMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/service/FoodService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/service/impl/FoodServiceImpl.java" afterDir="false" />
+    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="2-25:10 添加了entity类">
+      <change afterPath="$PROJECT_DIR$/demo/src/GeneratorMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/mapper/FoodMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/mapper/DemoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/mapper/DemoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -68,6 +62,13 @@
       <recent name="D:\OneDrive - stu.scu.edu.cn\codes\WebCodes\order_system\order-system\demo\src\main\java\com\example1" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
@@ -86,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645753879329</updated>
       <workItem from="1645753882111" duration="2893000" />
+      <workItem from="1645756829281" duration="2508000" />
     </task>
     <task id="LOCAL-00001" summary="(1)添加了JsonResponse封装类&#10;(2)配置了properties">
       <created>1645754130530</created>
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645754285943</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2-25:10 添加了entity类">
+      <created>1645756903481</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645756903481</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,9 +126,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="(1)添加了JsonResponse封装类&#10;(2)配置了properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="(1)添加了JsonResponse封装类&#10;(2)配置了properties" />
+    <MESSAGE value="2-25:10 添加了entity类" />
+    <option name="LAST_COMMIT_MESSAGE" value="2-25:10 添加了entity类" />
   </component>
 </project>
