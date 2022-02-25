@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="2-25:10 添加了entity类">
-      <change afterPath="$PROJECT_DIR$/demo/src/GeneratorMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/mapper/FoodMapper.xml" afterDir="false" />
+    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="2-25:11 pom添加了自动生成插件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/mapper/DemoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/mapper/DemoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/GeneratorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/GeneratorMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1645753879329</updated>
       <workItem from="1645753882111" duration="2893000" />
-      <workItem from="1645756829281" duration="2508000" />
+      <workItem from="1645756829281" duration="2771000" />
+      <workItem from="1645760688324" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="(1)添加了JsonResponse封装类&#10;(2)配置了properties">
       <created>1645754130530</created>
@@ -110,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645756903481</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2-25:11 pom添加了自动生成插件">
+      <created>1645760241821</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645760241821</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="(1)添加了JsonResponse封装类&#10;(2)配置了properties" />
     <MESSAGE value="2-25:10 添加了entity类" />
-    <option name="LAST_COMMIT_MESSAGE" value="2-25:10 添加了entity类" />
+    <MESSAGE value="2-25:11 pom添加了自动生成插件" />
+    <option name="LAST_COMMIT_MESSAGE" value="2-25:11 pom添加了自动生成插件" />
   </component>
 </project>
