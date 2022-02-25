@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="(1)添加了JsonResponse封装类&#10;(2)配置了properties" />
+    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="(1)添加了JsonResponse封装类&#10;(2)配置了properties">
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/controller/FoodController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/FoodOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/Notice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/NoticeUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/TOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/mapper/FoodMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/service/FoodService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example1/service/impl/FoodServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +43,9 @@
     </option>
   </component>
   <component name="ProjectId" id="25XsDHkHHq3s0Bj9VdMETXvo018" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,22 +55,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo/src/main/java/com/example1" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo/src/main/java/com/example1/controller" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example1.service.impl" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OneDrive - stu.scu.edu.cn\codes\WebCodes\order_system\order-system\demo\src\main\java\com\example1\controller" />
+      <recent name="D:\OneDrive - stu.scu.edu.cn\codes\WebCodes\order_system\order-system\demo\src\main\java\com\example1\entity" />
       <recent name="D:\OneDrive - stu.scu.edu.cn\codes\WebCodes\order_system\order-system\demo\src\main\java\com\example1" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Demo2Application">
-    <configuration name="Demo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="demo2" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example2.Demo2Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example1.DemoApplication" />
@@ -72,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645753879329</updated>
-      <workItem from="1645753882111" duration="386000" />
+      <workItem from="1645753882111" duration="2893000" />
     </task>
     <task id="LOCAL-00001" summary="(1)添加了JsonResponse封装类&#10;(2)配置了properties">
       <created>1645754130530</created>
@@ -81,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645754130530</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="(1)添加了JsonResponse封装类&#10;(2)配置了properties">
+      <created>1645754285943</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1645754285943</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
