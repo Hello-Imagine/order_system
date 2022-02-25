@@ -5,6 +5,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>demo</module>
+        <module>demo2</module>
+        <module>images</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

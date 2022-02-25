@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="2-25:11 pom添加了自动生成插件">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/GeneratorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/GeneratorMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e0528c3f-3d63-4739-8fe8-1c72e8b55b2e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +14,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
@@ -46,7 +42,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo/src/main/java/com/example1/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -66,10 +65,24 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.DemoApplication">
+    <configuration name="Demo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example2.Demo2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example1.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImagesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="images" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.images.ImagesApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -84,8 +97,6 @@
       <option name="presentableId" value="Default" />
       <updated>1645753879329</updated>
       <workItem from="1645753882111" duration="2893000" />
-      <workItem from="1645756829281" duration="2771000" />
-      <workItem from="1645760688324" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="(1)添加了JsonResponse封装类&#10;(2)配置了properties">
       <created>1645754130530</created>
@@ -101,21 +112,7 @@
       <option name="project" value="LOCAL" />
       <updated>1645754285943</updated>
     </task>
-    <task id="LOCAL-00003" summary="2-25:10 添加了entity类">
-      <created>1645756903481</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1645756903481</updated>
-    </task>
-    <task id="LOCAL-00004" summary="2-25:11 pom添加了自动生成插件">
-      <created>1645760241821</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1645760241821</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,8 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="(1)添加了JsonResponse封装类&#10;(2)配置了properties" />
-    <MESSAGE value="2-25:10 添加了entity类" />
-    <MESSAGE value="2-25:11 pom添加了自动生成插件" />
-    <option name="LAST_COMMIT_MESSAGE" value="2-25:11 pom添加了自动生成插件" />
+    <MESSAGE value="2-25 11:16 add module images &amp; change pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="2-25 11:16 add module images &amp; change pom.xml" />
   </component>
 </project>
