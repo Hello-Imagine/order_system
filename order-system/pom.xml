@@ -8,6 +8,7 @@
         <module>demo2</module>
         <module>images</module>
         <module>admin</module>
+        <module>kitchen</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
