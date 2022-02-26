@@ -25,4 +25,7 @@ public interface UserService {
 
     //根据员工身份筛选员工
     public List<User> listByRole(Integer role);
+
+    //查找销量前三的服务员
+    public List<User> selectTop3Waiter();
 }

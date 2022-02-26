@@ -11,13 +11,20 @@
     </delete>
 
     <update id="update" parameterType="com.example1.entity.User">
-        update user set username = #{username}, password = #{password},
-                        portrait = #{portrait}, `role` = #{role},
-                        phone = #{phone}, salary = #{salary}, bonus = #{bonus}
+        update user
+        set
+            <if test="username != null"> username = #{username}, </if>
+            <if test="password != null"> password = #{password}, </if>
+            <if test="portrait != null"> portrait = #{portrait}, </if>
+            <if test="role != null"> `role` = #{role}, </if>
+            <if test="phone != null"> phone = #{phone},</if>
+            <if test="salary != null"> salary = #{salary},</if>
+            <if test="bonus != null"> bonus = #{bonus} </if>
+        where user_id = #{userId}
     </update>
 
-    <select id="selectById" resultType="com.example1.entity.User">
-        select * from user where user_id = id
+    <select id="selectById" parameterType="int" resultType="com.example1.entity.User">
+        select * from user where user_id = #{id}
     </select>
 
     <select id="listAll" resultType="com.example1.entity.User">
@@ -26,10 +33,19 @@
 
     <select id="fuzzySearchByName" resultType="com.example1.entity.User">
         select * from user
-        where username like '%#{part}%'
+        where username like concat('%', #{part}, '%')
     </select>
 
     <select id="listByRole" resultType="com.example1.entity.User">
         select * from user where role = #{role}
+    </select>
+
+    <select id="selectTop3Waiter" resultType="com.example1.entity.User">
+        select *
+        from user natural join (
+            select user_id, count(order_id) as order_num
+            from user natural join t_order
+            group by user_id) as waiter_order_num
+        order by order_num desc limit 3
     </select>
 </mapper>

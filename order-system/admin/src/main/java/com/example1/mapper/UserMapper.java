@@ -20,4 +20,6 @@ public interface UserMapper {
     List<User> fuzzySearchByName(String part);
 
     List<User> listByRole(Integer role);
+
+    List<User> selectTop3Waiter();
 }

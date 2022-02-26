@@ -6,18 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/food")
 public class FoodController {
 
     @Autowired
     FoodService foodService;
 
+    //显示所有菜品信息
     @RequestMapping("/list")
-    @ResponseBody
     public JsonResponse list(){
-
-        return JsonResponse.success(null);
+        return JsonResponse.success(foodService.listAll());
     }
+
+    //根据 id 显示菜品信息
 }

@@ -49,4 +49,9 @@ public class UserServiceImpl implements UserService {
     public List<User> listByRole(Integer role) {
         return userMapper.listByRole(role);
     }
+
+    @Override
+    public List<User> selectTop3Waiter() {
+        return userMapper.selectTop3Waiter();
+    }
 }
