@@ -8,6 +8,7 @@
         <module>demo2</module>
         <module>images</module>
         <module>admin</module>
+        <module>waiter</module>
         <module>kitchen</module>
     </modules>
     <parent>
