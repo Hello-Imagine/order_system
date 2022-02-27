@@ -7,4 +7,6 @@ public interface MessageService {
     public MessageView showMessage(Integer receive_user);
 
     public Message messagedetails(Integer message_id);
+
+    void changeStatus(Integer message_id);
 }

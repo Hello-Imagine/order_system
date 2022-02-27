@@ -11,4 +11,6 @@ public interface NoticeService {
     public NoticeView showNotice(Integer user_id);
 
     public Noticedetails noticedetails(Integer notice_id);
+
+    void changeStatus(Integer notice_id);
 }

@@ -40,5 +40,10 @@ public class NoticeServiceImpl implements NoticeService {
         return noticedetails;
     }
 
+    @Override
+    public void changeStatus(Integer notice_id) {
+        noticeMapper.updateStatus(notice_id);
+    }
+
 
 }

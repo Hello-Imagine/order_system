@@ -8,6 +8,7 @@ import com.waiter.service.OrderService;
 import com.waiter.vo.OrderDetails;
 import com.waiter.vo.OrderView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,8 +44,8 @@ public class OrderController {
 //    }
 
     //确认点单 注意传入的 foodList 是菜品的id和对应数量的 map
-    @RequestMapping("/waiter/take_order")
-    public void takeOrder(Integer user_id, Integer table_id, Integer num_people,
+    @PostMapping("/waiter/take_order")
+    public JsonResponse takeOrder(Integer user_id, Integer table_id, Integer num_people,
                           String memo, Float total_price, @RequestParam List<OrderView> orderViews){
         //创建订单
         Integer order_id = orderService.createOrder(user_id,table_id,num_people,memo,total_price);
@@ -52,7 +53,7 @@ public class OrderController {
         for (OrderView a:orderViews) {
             orderService.createAssociation(order_id,a.getFoodId(),a.getNumFood());
         }
-
+        return JsonResponse.msg(1,"成功");
     }
 
     //待结算订单

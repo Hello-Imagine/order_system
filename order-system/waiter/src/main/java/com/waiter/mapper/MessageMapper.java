@@ -11,4 +11,6 @@ public interface MessageMapper {
     List<Message> selectAllMessage(Integer receive_user);
 
     Message queryMessage(Integer message_id);
+
+    void updateStatus(Integer message_id);
 }

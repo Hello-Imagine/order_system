@@ -36,4 +36,12 @@ public class NoticeController {
         return JsonResponse.success(result);
     }
 
+    //转换公告状态 已读未读
+    @RequestMapping("/waiter/notice/status")
+    public JsonResponse changeStatus(Integer notice_id){
+
+        noticeService.changeStatus(notice_id);
+        return JsonResponse.msg(1,"成功");
+    }
+
 }

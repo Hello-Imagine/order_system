@@ -40,4 +40,9 @@ public class                  MessageServiceImpl implements MessageService {
         Message message = messageMapper.queryMessage(message_id);
         return message;
     }
+
+    @Override
+    public void changeStatus(Integer message_id) {
+        messageMapper.updateStatus(message_id);
+    }
 }
