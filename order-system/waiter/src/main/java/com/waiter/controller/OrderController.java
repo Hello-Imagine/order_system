@@ -43,7 +43,6 @@ public class OrderController {
     @PostMapping("/waiter/take_order")
     public JsonResponse takeOrder(@RequestBody OrderRequestBody orderRequestBody){
         //创建订单
-        System.out.println(orderRequestBody);
         Integer order_id = orderService.createOrder(orderRequestBody.getUserId(),
                 orderRequestBody.getTableId(), orderRequestBody.getNumPeople(),
                 orderRequestBody.getMemo(), orderRequestBody.getTotalPrice());

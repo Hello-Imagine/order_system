@@ -12,10 +12,9 @@ public interface OrderMapper {
 
     TOrder queryById(Integer order_id);
 
-    Integer insertOrder(Integer user_id, Integer table_id, Integer num_people,
-                        String memo, Float total_price, Date create_time,Integer status);
+    Integer insertOrder(TOrder tOrder);
 
-    void insertAssociation(Integer order_id, Integer food_id, Integer num_food, Integer status);
+    void insertAssociation(Integer order_id, Integer food_id, Integer num_food, Integer status, Integer delivery);
 
     List<TOrder> selectOrderToPay(Integer user_id);
 

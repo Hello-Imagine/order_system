@@ -24,15 +24,26 @@ public class OrderServiceImpl implements OrderService {
         //设置create_time 为当前时间
         Date create_time = new Date();
 
-        return orderMapper.insertOrder(user_id, table_id,num_people,memo,
-                total_price,create_time,status);
+        TOrder tOrder = new TOrder();
+        tOrder.setUserId(user_id);
+        tOrder.setTableId(table_id);
+        tOrder.setNumPeople(num_people);
+        tOrder.setMemo(memo);
+        tOrder.setTotalPrice(total_price);
+        tOrder.setCreateTime(create_time);
+        tOrder.setStatus(status);
+
+        orderMapper.insertOrder(tOrder);
+        return tOrder.getOrderId();
     }
 
     @Override
     public void createAssociation(Integer order_id, Integer food_id, Integer num_food) {
         //设置status 为还没炒
         Integer status = 0;
-        orderMapper.insertAssociation(order_id,food_id,num_food,status);
+        //设置delivery 为未传菜
+        Integer delivery = 0;
+        orderMapper.insertAssociation(order_id,food_id,num_food,status,delivery);
     }
 
     @Override

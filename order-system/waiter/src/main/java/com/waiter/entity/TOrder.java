@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -18,7 +19,7 @@ public class TOrder {
     private Float totalPrice;
     private String memo;
     private Integer status;
-    private LocalDateTime createTime;
-    private LocalDateTime finishTime;
+    private Date createTime;
+    private Date finishTime;
     private Integer numPeople;
 }
