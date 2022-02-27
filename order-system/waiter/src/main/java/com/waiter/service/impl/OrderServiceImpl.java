@@ -22,10 +22,10 @@ public class OrderServiceImpl implements OrderService {
         //设置status 为未支付
         Integer status = 0;
         //设置create_time 为当前时间
-        Date creat_time = new Date();
+        Date create_time = new Date();
 
         return orderMapper.insertOrder(user_id, table_id,num_people,memo,
-                total_price,creat_time,status);
+                total_price,create_time,status);
     }
 
     @Override
