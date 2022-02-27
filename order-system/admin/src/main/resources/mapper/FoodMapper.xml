@@ -14,13 +14,13 @@
     <update id="update" parameterType="com.example1.entity.Food">
         update food
         set
-            <if orderRequestBody="foodName != null"> food_name = #{foodName}, </if>
-            <if orderRequestBody="description != null"> description = #{description}, </if>
-            <if orderRequestBody="category != null"> category = #{category}, </if>
-            <if orderRequestBody="price != null"> price = #{price}, </if>
-            <if orderRequestBody="image != null"> image = #{image}, </if>
-            <if orderRequestBody="isLike != null"> is_like = #{isLike}, </if>
-            <if orderRequestBody="isAvailable != null"> is_available = #{isAvailable}, </if>
+            <if test="foodName != null"> food_name = #{foodName}, </if>
+            <if test="description != null"> description = #{description}, </if>
+            <if test="category != null"> category = #{category}, </if>
+            <if test="price != null"> price = #{price}, </if>
+            <if test="image != null"> image = #{image}, </if>
+            <if test="isLike != null"> is_like = #{isLike}, </if>
+            <if test="isAvailable != null"> is_available = #{isAvailable}, </if>
         where food_id = #{foodId}
     </update>
 
@@ -48,8 +48,8 @@
 
     <select id="selectByPrice" resultType="com.example1.entity.Food">
         select * from food where true
-        <if orderRequestBody="min != null"> and #{min} &lt;= price </if>
-        <if orderRequestBody="max != null"> and price &lt;= #{max}</if>
+        <if test="min != null"> and #{min} &lt;= price </if>
+        <if test="max != null"> and price &lt;= #{max}</if>
         order by price desc
     </select>
 

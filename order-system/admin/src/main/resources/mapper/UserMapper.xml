@@ -13,13 +13,13 @@
     <update id="update" parameterType="com.example1.entity.User">
         update user
         set
-            <if orderRequestBody="username != null"> username = #{username}, </if>
-            <if orderRequestBody="password != null"> password = #{password}, </if>
-            <if orderRequestBody="portrait != null"> portrait = #{portrait}, </if>
-            <if orderRequestBody="role != null"> `role` = #{role}, </if>
-            <if orderRequestBody="phone != null"> phone = #{phone},</if>
-            <if orderRequestBody="salary != null"> salary = #{salary},</if>
-            <if orderRequestBody="bonus != null"> bonus = #{bonus} </if>
+            <if test="username != null"> username = #{username}, </if>
+            <if test="password != null"> password = #{password}, </if>
+            <if test="portrait != null"> portrait = #{portrait}, </if>
+            <if test="role != null"> `role` = #{role}, </if>
+            <if test="phone != null"> phone = #{phone},</if>
+            <if test="salary != null"> salary = #{salary},</if>
+            <if test="bonus != null"> bonus = #{bonus} </if>
         where user_id = #{userId}
     </update>
 
