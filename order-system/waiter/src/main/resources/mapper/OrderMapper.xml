@@ -25,7 +25,7 @@
     <select id="selectOrderToPay" resultType="com.waiter.entity.TOrder">
         select *
         from t_order
-        where user_id = #{user_id} and status = 2;
+        where user_id = #{user_id} and status &lt; 3;
     </select>
     <select id="selectOrderFood" resultType="com.waiter.vo.FoodStatistic">
         select food_name,description,category,price,is_like

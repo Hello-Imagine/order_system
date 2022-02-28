@@ -56,7 +56,7 @@ public class OrderController {
     //待结算订单
     @RequestMapping("/waiter/to_pay")
     public JsonResponse toPay(Integer user_id){
-
+//        System.out.println(user_id);
         List<TOrder> result = orderService.showOrderToPay(user_id);
         return JsonResponse.success(result);
     }
