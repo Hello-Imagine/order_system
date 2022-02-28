@@ -16,6 +16,11 @@
         insert into food_order (order_id, food_id, num_food, status, delivery)
         values (#{order_id},#{food_id},#{num_food},#{status},#{delivery});
     </insert>
+    <update id="updateOrder">
+        update t_order
+        set status = 3
+        where order_id = #{order_id};
+    </update>
 
     <select id="queryById" resultType="com.waiter.entity.TOrder">
         select *

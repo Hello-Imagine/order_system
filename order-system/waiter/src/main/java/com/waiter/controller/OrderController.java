@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class OrderController {
@@ -70,6 +71,15 @@ public class OrderController {
                 return JsonResponse.failure("订单已删除");
             }
             return JsonResponse.success(result);
+    }
+
+    //订单结算
+    @PostMapping("/waiter/to_pay/pay")
+    public JsonResponse pay(@RequestParam Map<String, String> data){
+        Integer order_id = Integer.parseInt(data.get("order_id"));
+        System.out.println(order_id);
+        orderService.payOrder(order_id);
+        return JsonResponse.msg(1,"成功");
     }
 
 }

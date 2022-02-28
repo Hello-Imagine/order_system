@@ -63,4 +63,11 @@ public class OrderServiceImpl implements OrderService {
         return orderDetails;
     }
 
+    @Override
+    public void payOrder(Integer order_id) {
+
+        orderMapper.updateOrder(order_id);
+
+    }
+
 }

@@ -17,4 +17,6 @@ public interface OrderService {
     List<TOrder> showOrderToPay(Integer user_id);
 
     OrderDetails showOrderDetails(Integer order_id);
+
+    void payOrder(Integer order_id);
 }

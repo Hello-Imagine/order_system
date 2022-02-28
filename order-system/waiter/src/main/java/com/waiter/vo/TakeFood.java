@@ -16,4 +16,5 @@ public class TakeFood {
     private String foodName;
     private String image;
     private Integer status;
+    private Integer delivery;
 }

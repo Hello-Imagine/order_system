@@ -8,7 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface FoodMapper {
-
     List<Food> selectAll();
 
     List<Food> queryById(String query);

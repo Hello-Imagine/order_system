@@ -19,4 +19,6 @@ public interface OrderMapper {
     List<TOrder> selectOrderToPay(Integer user_id);
 
     List<FoodStatistic> selectOrderFood(Integer order_id);
+
+    void updateOrder(Integer order_id);
 }
