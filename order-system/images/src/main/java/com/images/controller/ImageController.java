@@ -2,6 +2,7 @@ package com.images.controller;
 
 import com.images.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,6 +25,11 @@ public class ImageController {
     @PostMapping("/images/upload")
     public Map<String, String> imageUpload(MultipartFile file) throws IOException {
         return imageService.upload(file);
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "hello world";
     }
 
 }

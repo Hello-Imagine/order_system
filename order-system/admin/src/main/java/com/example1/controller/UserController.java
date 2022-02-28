@@ -25,14 +25,7 @@ public class UserController {
             return JsonResponse.failure("1");
         else  if(!Objects.equals(user.getPassword(), password))
             return JsonResponse.failure("2");
-        else if (user.getRole() == 1)
-            return JsonResponse.success(1);
-        else if (user.getRole() == 2)
-            return JsonResponse.success(2);
-        else if (user.getRole() == 3)
-            return JsonResponse.success(3);
-        else
-            return JsonResponse.failure(null);
+        else return JsonResponse.success(user);
     }
 
     //删除员工

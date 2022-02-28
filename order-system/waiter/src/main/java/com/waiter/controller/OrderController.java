@@ -65,12 +65,11 @@ public class OrderController {
     //订单结算详情
     @RequestMapping("/waiter/order_details")
     public JsonResponse orderDetails(Integer order_id){
-
         OrderDetails result = orderService.showOrderDetails(order_id);
         if(result==null){
-                return JsonResponse.failure("订单已删除");
-            }
-            return JsonResponse.success(result);
+            return JsonResponse.failure("订单已删除");
+        }
+        return JsonResponse.success(result);
     }
 
     //订单结算
