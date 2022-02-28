@@ -13,4 +13,6 @@ public interface MessageMapper {
     Message queryMessage(Integer message_id);
 
     void updateStatus(Integer message_id);
+
+    String querySenderName(Integer message_id);
 }

@@ -16,4 +16,9 @@
         from message
         where message_id = #{message_id}
     </select>
+    <select id="querySenderName" resultType="java.lang.String">
+        select user.username
+        from message join user on message.send_user = user.user_id
+        where message_id = #{message_id};
+    </select>
 </mapper>
