@@ -16,6 +16,8 @@ public interface FoodService{
 
     boolean setNotAvailable(Integer id);
 
+    boolean setLike(Integer id);
+
     List<Food> listAll();
 
     Food selectById(Integer id);

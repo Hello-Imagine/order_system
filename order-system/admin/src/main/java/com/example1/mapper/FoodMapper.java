@@ -30,4 +30,6 @@ public interface FoodMapper {
     List<Food> fuzzySearchByName(String query);
 
     List<FoodSales> selectTop3Food();
+
+    boolean setLike(Integer id);
 }

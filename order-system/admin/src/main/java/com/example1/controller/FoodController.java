@@ -22,7 +22,7 @@ public class FoodController {
     @RequestMapping("/add")
     public JsonResponse addFood(Food food){
         if(foodService.add(food))
-            return JsonResponse.success(null);
+            return JsonResponse.success(food);
         else
             return JsonResponse.failure("failed to insert. Check the field of food.");
     }
@@ -106,6 +106,14 @@ public class FoodController {
         catch( Exception e){
             return JsonResponse.success(foodService.fuzzySearchByName(query));
         }
+    }
+
+    //设置推荐菜品
+    @RequestMapping("/set_like")
+    public JsonResponse setLike(Integer id){
+        if (foodService.setLike(id))
+            return JsonResponse.success(null);
+        else return JsonResponse.failure("No such a food.");
     }
 
     //查询销售榜前三的菜品

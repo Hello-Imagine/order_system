@@ -8,11 +8,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
     UserService userService;
+
+    //员工登录
+    @RequestMapping("/index")
+    public JsonResponse login(Integer user_id, String password){
+        User user = userService.selectById(user_id);
+
+        if (user == null)
+            return JsonResponse.failure("1");
+        else  if(!Objects.equals(user.getPassword(), password))
+            return JsonResponse.failure("2");
+        else if (user.getRole() == 1)
+            return JsonResponse.success(1);
+        else if (user.getRole() == 2)
+            return JsonResponse.success(2);
+        else if (user.getRole() == 3)
+            return JsonResponse.success(3);
+        else
+            return JsonResponse.failure(null);
+    }
 
     //删除员工
     @PostMapping("/delete")
@@ -28,7 +49,7 @@ public class UserController {
     @RequestMapping("/add")
     public JsonResponse add(User user){
         if(userService.insert(user))
-            return JsonResponse.success(null);
+            return JsonResponse.success(user);
         else return JsonResponse.failure("failed to insert. Check the field of user.");
     }
 
@@ -85,15 +106,15 @@ public class UserController {
         }
     }
 
-    //显示管理员基本信息
-    @RequestMapping("/admin_info")
+    //显示员工基本信息
+    @RequestMapping("/user_info")
     public JsonResponse adminInfo(Integer id){
         User user = userService.selectById(id);
 
         if (user == null)
             return JsonResponse.failure("The user does not exist");
-        if (user.getRole()!=1)
-            return JsonResponse.failure("The user is not an admin");
+//        if (user.getRole()!=1)
+//            return JsonResponse.failure("The user is not an admin");
         else
             return JsonResponse.success(user);
     }

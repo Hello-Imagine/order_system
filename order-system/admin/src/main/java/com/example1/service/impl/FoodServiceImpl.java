@@ -41,6 +41,11 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
+    public boolean setLike(Integer id) {
+        return foodMapper.setLike(id);
+    }
+
+    @Override
     public List<Food> listAll() {
         return foodMapper.listAll();
     }

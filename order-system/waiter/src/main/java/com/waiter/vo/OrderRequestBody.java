@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class OrderRequestBody {
+public class test {
     private Integer userId;
     private Integer tableId;
     private Integer numPeople;
