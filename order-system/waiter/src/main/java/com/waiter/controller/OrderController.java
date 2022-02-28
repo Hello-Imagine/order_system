@@ -5,7 +5,7 @@ import com.waiter.entity.TOrder;
 import com.waiter.service.FoodService;
 import com.waiter.service.OrderService;
 import com.waiter.vo.OrderDetails;
-import com.waiter.vo.test;
+import com.waiter.vo.OrderRequestBody;
 import com.waiter.vo.OrderView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,14 +41,13 @@ public class OrderController {
 
     //确认点单 注意传入的 foodList 是菜品的id和对应数量的 map
     @PostMapping("/waiter/take_order")
-    public JsonResponse takeOrder(@RequestBody test test){
+    public JsonResponse takeOrder(@RequestBody OrderRequestBody orderRequestBody){
         //创建订单
-        System.out.println(test);
-        Integer order_id = orderService.createOrder(test.getUserId(),
-                test.getTableId(), test.getNumPeople(),
-                test.getMemo(), test.getTotalPrice());
+        Integer order_id = orderService.createOrder(orderRequestBody.getUserId(),
+                orderRequestBody.getTableId(), orderRequestBody.getNumPeople(),
+                orderRequestBody.getMemo(), orderRequestBody.getTotalPrice());
         //创建关联表
-        for (OrderView a : test.getOrderViews()) {
+        for (OrderView a : orderRequestBody.getOrderViews()) {
             orderService.createAssociation(order_id,a.getFoodId(),a.getNumFood());
         }
         return JsonResponse.msg(1,"成功");

@@ -10,6 +10,7 @@
         <module>admin</module>
         <module>waiter</module>
         <module>kitchen</module>
+        <module>menu</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
