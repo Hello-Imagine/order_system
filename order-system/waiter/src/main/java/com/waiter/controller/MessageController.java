@@ -3,6 +3,7 @@ package com.waiter.controller;
 import com.waiter.JsonResponse;
 import com.waiter.entity.Message;
 import com.waiter.service.MessageService;
+import com.waiter.vo.MessageDetails;
 import com.waiter.vo.MessageView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,7 @@ public class MessageController {
     @RequestMapping("/waiter/message_details")
     public JsonResponse messageDetails(Integer message_id){
 
-        Message result = messageService.messagedetails(message_id);
+        MessageDetails result = messageService.messagedetails(message_id);
         if(result == null){
             return  JsonResponse.failure("找不到该公告");
         }
