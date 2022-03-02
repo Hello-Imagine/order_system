@@ -15,9 +15,19 @@ public class MenuController {
     @Autowired
     private MenuService menuService;
 
-    @GetMapping("/menu/waiter_notice")
+    @GetMapping("/menu/waiter")
     public JsonResponse<List<WaiterMenu>> waiterNotice() {
         return menuService.getWaiterMenu();
+    }
+
+    @GetMapping("/menu/administrator")
+    public JsonResponse<List<WaiterMenu>> getAdministratorMenu() {
+        return menuService.getAdministratorMenu();
+    }
+
+    @GetMapping("/menu/kitchen")
+    public JsonResponse<List<WaiterMenu>> getKitchenMenu() {
+        return menuService.getKitchenMenu();
     }
 
 }

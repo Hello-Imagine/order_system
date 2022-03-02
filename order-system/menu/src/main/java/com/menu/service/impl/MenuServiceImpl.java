@@ -26,6 +26,28 @@ public class MenuServiceImpl implements MenuService {
         return JsonResponse.success(root);
     }
 
+    @Override
+    public JsonResponse<List<WaiterMenu>> getAdministratorMenu() {
+        List<WaiterMenu> root = menuMapper.getAdministratorMenu();
+        List<WaiterMenu> administratorMenus = menuMapper.getAllAdministratorMenu();
+        for (WaiterMenu waiterMenu : root) {
+            List<WaiterMenu> children = getChildren(waiterMenu, administratorMenus);
+            waiterMenu.setChildren(children);
+        }
+        return JsonResponse.success(root);
+    }
+
+    @Override
+    public JsonResponse<List<WaiterMenu>> getKitchenMenu() {
+        List<WaiterMenu> root = menuMapper.getKitchenMenu();
+        List<WaiterMenu> waiterMenus = menuMapper.getAllKitchenMenu();
+        for (WaiterMenu waiterMenu : root) {
+            List<WaiterMenu> children = getChildren(waiterMenu, waiterMenus);
+            waiterMenu.setChildren(children);
+        }
+        return JsonResponse.success(root);
+    }
+
     private List<WaiterMenu> getChildren(WaiterMenu waiterMenu, List<WaiterMenu> waiterMenus) {
         List<WaiterMenu> children = new ArrayList<>();
         for (WaiterMenu waiterMenu2 : waiterMenus) {

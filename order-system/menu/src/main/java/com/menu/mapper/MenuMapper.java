@@ -11,4 +11,9 @@ public interface MenuMapper {
     List<WaiterMenu> getRootWaiterNoticeMenu();
     List<WaiterMenu> getAllWaiterNoticeMenu();
 
+    List<WaiterMenu> getAdministratorMenu();
+    List<WaiterMenu> getAllAdministratorMenu();
+
+    List<WaiterMenu> getKitchenMenu();
+    List<WaiterMenu> getAllKitchenMenu();
 }
