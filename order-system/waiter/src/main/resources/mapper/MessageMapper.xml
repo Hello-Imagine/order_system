@@ -6,11 +6,7 @@
         set status = 1
         where message_id = #{message_id};
     </update>
-    <select id="selectAllMessage" resultType="com.waiter.entity.Message">
-        select *
-        from message
-        where receive_user = #{receive_user};
-    </select>
+
     <select id="queryMessage" resultType="com.waiter.entity.Message">
         select *
         from message
@@ -21,4 +17,11 @@
         from message join user on message.send_user = user.user_id
         where message_id = #{message_id};
     </select>
+
+    <select id="selectAllMessage" resultType="com.waiter.vo.MessageDetails">
+        select message_id, order_id, title, content, create_time, send_user, receive_user, status, username
+        from message join user on message.send_user = user.user_id
+        where message.receive_user = #{receive_user};
+    </select>
+
 </mapper>

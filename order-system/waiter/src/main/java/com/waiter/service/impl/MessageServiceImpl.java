@@ -24,7 +24,7 @@ public class                  MessageServiceImpl implements MessageService {
     public MessageView showMessage(Integer receive_user) {
         MessageView messageView = new MessageView();
         UserDetails userDetails = noticeMapper.queryUser(receive_user);
-        List<Message> messages = messageMapper.selectAllMessage(receive_user);
+        List<MessageDetails> messages = messageMapper.selectAllMessage(receive_user);
 
         messageView.setMessages(messages);
 
@@ -32,7 +32,6 @@ public class                  MessageServiceImpl implements MessageService {
         messageView.setUserName(userDetails.getUserName());
         messageView.setRole(userDetails.getRole());
         messageView.setPortrait(userDetails.getPortrait());
-        messageView.setPassword(userDetails.getPassword());
         return messageView;
     }
 
