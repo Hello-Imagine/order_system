@@ -66,8 +66,9 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void payOrder(Integer order_id) {
 
-        orderMapper.updateOrder(order_id);
-
+        //获取当前时间作为finished time
+        Date finishTime = new Date();
+        orderMapper.updateOrder(order_id, finishTime);
     }
 
 }

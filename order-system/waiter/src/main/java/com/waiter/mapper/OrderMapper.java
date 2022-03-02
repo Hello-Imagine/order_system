@@ -20,5 +20,5 @@ public interface OrderMapper {
 
     List<FoodStatistic> selectOrderFood(Integer order_id);
 
-    void updateOrder(Integer order_id);
+    void updateOrder(Integer order_id, Date finishTime);
 }

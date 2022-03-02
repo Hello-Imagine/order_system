@@ -17,6 +17,6 @@ public class MessageView {
     private String userName;
     private Integer role;
     private String portrait;
-    private String password;
-    private List<Message> messages;
+    private String senderName;
+    private List<MessageDetails> messages;
 }

@@ -14,4 +14,5 @@ public class NoticeList {
     private int noticeId;
     private String title;
     private int status;
+    private String content;
 }
