@@ -18,7 +18,7 @@
     </insert>
     <update id="updateOrder">
         update t_order
-        set status = 3
+        set status = 3, finish_time = #{finishTime}
         where order_id = #{order_id};
     </update>
 
