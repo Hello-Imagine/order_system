@@ -46,6 +46,11 @@ public class FoodServiceImpl implements FoodService {
         return foodMapper.queryTakeFood(user_id);
     }
 
+    @Override
+    public void changeDelivery(Integer order_id, Integer food_id) {
+        foodMapper.updateDelivery(order_id, food_id);
+    }
+
     //用于判断搜索框输入的字符串是不是纯数字
     public static boolean isInteger(String str) {
         Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");

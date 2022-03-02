@@ -17,4 +17,6 @@ public interface FoodMapper {
     Food queryFood(Integer food_id);
 
     List<TakeFood> queryTakeFood(Integer user_id);
+
+    void updateDelivery(Integer order_id, Integer food_id);
 }

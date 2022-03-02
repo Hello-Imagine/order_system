@@ -50,4 +50,14 @@ public class FoodController {
         List<TakeFood> result = foodService.showTakeFood(user_id);
         return JsonResponse.success(result);
     }
+
+    //食物状态由未传菜变成已传菜
+    @RequestMapping("/waiter/take_food/update")
+    public JsonResponse updateDelivery(Integer order_id, Integer food_id){
+        if(order_id == null || food_id ==null){
+            return JsonResponse.failure("前端未传入数据");
+        }
+        foodService.changeDelivery(order_id, food_id);
+        return JsonResponse.msg(1,"成功");
+    }
 }

@@ -16,4 +16,6 @@ public interface FoodService {
     Food showDetails(Integer food_id);
 
     List<TakeFood> showTakeFood(Integer user_id);
+
+    void changeDelivery(Integer order_id, Integer food_id);
 }

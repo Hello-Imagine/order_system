@@ -31,7 +31,7 @@ public class MessageController {
 
         MessageDetails result = messageService.messagedetails(message_id);
         if(result == null){
-            return  JsonResponse.failure("找不到该公告");
+            return  JsonResponse.failure("找不到该消息");
         }
         return JsonResponse.success(result);
     }
