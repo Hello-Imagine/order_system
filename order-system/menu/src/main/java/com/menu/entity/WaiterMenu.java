@@ -16,6 +16,7 @@ public class WaiterMenu {
     private Integer id;
     private String name;
     private Integer parentId;
+    private Integer role;
 
     private List<WaiterMenu> children;
 

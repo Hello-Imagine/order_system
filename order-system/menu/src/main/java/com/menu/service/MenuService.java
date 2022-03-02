@@ -9,4 +9,7 @@ public interface MenuService {
 
     JsonResponse<List<WaiterMenu>> getWaiterMenu();
 
+    JsonResponse<List<WaiterMenu>> getAdministratorMenu();
+
+    JsonResponse<List<WaiterMenu>> getKitchenMenu();
 }
