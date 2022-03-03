@@ -19,6 +19,8 @@ public class FoodController {
     //添加菜品
     @RequestMapping("/add")
     public JsonResponse addFood(Food food){
+//        System.out.println(food);
+//        return JsonResponse.success(null);
         if(foodService.add(food))
             return JsonResponse.success(food);
         else
