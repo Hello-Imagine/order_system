@@ -20,7 +20,7 @@ public class ImageService2Impl implements ImageService2 {
     public String uploadImage(MultipartFile file) throws IOException {
         String imageName = getImageName() + ".png";
         file.transferTo(new File("/test/images/" + imageName));
-        return "http://47.108.225.54:9090/img/" + imageName;
+        return "47.108.225.54:9090/img/" + imageName;
     }
 
     /**
