@@ -1,20 +1,25 @@
 package com.example1.controller;
 
 import com.example1.entity.User;
+import com.example1.service.ImageService2;
 import com.example1.service.UserService;
 import com.example1.utils.JsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.Objects;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    UserService userService;
+    private UserService userService;
+    @Autowired
+    private ImageService2 imageService2;
 
     //员工登录
     @RequestMapping("/index")
@@ -40,7 +45,10 @@ public class UserController {
 
     //增加员工
     @RequestMapping("/add")
-    public JsonResponse add(User user){
+    public JsonResponse add(User user, MultipartFile file) throws IOException {
+        String image = imageService2.uploadImage(file);
+        user.setPortrait(image);
+
         if(userService.insert(user))
             return JsonResponse.success(user);
         else return JsonResponse.failure("failed to insert. Check the field of user.");
