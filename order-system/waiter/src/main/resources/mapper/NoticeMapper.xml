@@ -4,7 +4,7 @@
     <update id="updateStatus">
         update notice_user
         set status = 1
-        where notice_id = #{notice_id};
+        where notice_id = #{notice_id} and user_id = #{user_id};
     </update>
 
     <select id="selectAllNotice" resultType="com.waiter.vo.NoticeList">
@@ -22,7 +22,7 @@
     <select id="queryNotice" resultType="com.waiter.vo.Noticedetails">
         select notice_id, title, content, create_time, status
         from notice natural join notice_user
-        where notice_id = #{notice_id};
+        where notice_id = #{notice_id} and user_id = #{user_id};
     </select>
 
 

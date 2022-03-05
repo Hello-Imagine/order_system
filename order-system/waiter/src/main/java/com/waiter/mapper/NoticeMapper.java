@@ -15,7 +15,7 @@ public interface NoticeMapper {
 
     UserDetails queryUser(Integer user_id);
 
-    Noticedetails queryNotice(Integer notice_id);
+    Noticedetails queryNotice(Integer notice_id, Integer user_id);
 
-    void updateStatus(Integer notice_id);
+    void updateStatus(Integer notice_id, Integer user_id);
 }

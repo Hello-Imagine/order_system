@@ -27,9 +27,9 @@ public class NoticeController {
 
     //公告详情
     @RequestMapping("/waiter/notice_details")
-    public JsonResponse noticeDetails(Integer notice_id){
+    public JsonResponse noticeDetails(Integer notice_id, Integer user_id){
 
-        Noticedetails result = noticeService.noticedetails(notice_id);
+        Noticedetails result = noticeService.noticedetails(notice_id, user_id);
         if(result == null){
             return  JsonResponse.failure("找不到该公告");
         }
@@ -38,9 +38,9 @@ public class NoticeController {
 
     //转换公告状态 已读未读
     @RequestMapping("/waiter/notice/status")
-    public JsonResponse changeStatus(Integer notice_id){
+    public JsonResponse changeStatus(Integer notice_id, Integer user_id){
 
-        noticeService.changeStatus(notice_id);
+        noticeService.changeStatus(notice_id, user_id);
         return JsonResponse.msg(1,"成功");
     }
 
