@@ -46,8 +46,10 @@ public class UserController {
     //增加员工
     @RequestMapping("/add")
     public JsonResponse add(User user, MultipartFile file) throws IOException {
-        String image = imageService2.uploadImage(file);
-        user.setPortrait(image);
+        if(user.getPortrait() == null){
+            String image = imageService2.uploadImage(file);
+            user.setPortrait(image);
+        }
 
         if(userService.insert(user))
             return JsonResponse.success(user);

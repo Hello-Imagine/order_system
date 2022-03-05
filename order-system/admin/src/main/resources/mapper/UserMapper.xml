@@ -47,6 +47,6 @@
             select user_id, count(order_id) as sales
             from user natural join t_order
             group by user_id) as waiter_order_num
-        order by sales desc limit 3
+        order by sales desc
     </select>
 </mapper>

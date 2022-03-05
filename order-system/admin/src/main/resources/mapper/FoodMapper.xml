@@ -70,6 +70,6 @@
             select food_id, sum(num_food) as sales
             from food_order
             group by food_id) as food_order_num
-        order by sales desc limit 3
+        order by sales desc
     </select>
 </mapper>
