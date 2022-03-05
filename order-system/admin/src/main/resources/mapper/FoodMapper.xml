@@ -21,6 +21,7 @@
             <if test="image != null"> image = #{image}, </if>
             <if test="isLike != null"> is_like = #{isLike}, </if>
             <if test="isAvailable != null"> is_available = #{isAvailable}, </if>
+            <if test="foodId != null"> food_id = #{foodId} </if>
         where food_id = #{foodId}
     </update>
 

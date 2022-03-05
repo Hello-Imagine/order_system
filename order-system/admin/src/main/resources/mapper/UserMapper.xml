@@ -19,7 +19,8 @@
             <if test="role != null"> `role` = #{role}, </if>
             <if test="phone != null"> phone = #{phone},</if>
             <if test="salary != null"> salary = #{salary},</if>
-            <if test="bonus != null"> bonus = #{bonus} </if>
+            <if test="bonus != null"> bonus = #{bonus}, </if>
+            <if test="userId !=null"> user_id = #{userId} </if>
         where user_id = #{userId}
     </update>
 
