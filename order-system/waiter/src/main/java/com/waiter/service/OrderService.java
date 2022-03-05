@@ -16,6 +16,7 @@ public interface OrderService {
     //显示待结算订单
     List<TOrder> showOrderToPay(Integer user_id);
 
+    //显示待结算订单详情
     OrderDetails showOrderDetails(Integer order_id);
 
     void payOrder(Integer order_id);

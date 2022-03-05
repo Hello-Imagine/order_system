@@ -33,7 +33,7 @@
         where user_id = #{user_id} and status &lt; 3;
     </select>
     <select id="selectOrderFood" resultType="com.waiter.vo.FoodStatistic">
-        select food_name,description,category,price,is_like
+        select food_name,description,category,price,is_like,image,num_food
         from food natural join food_order
         where order_id = #{order_id};
     </select>

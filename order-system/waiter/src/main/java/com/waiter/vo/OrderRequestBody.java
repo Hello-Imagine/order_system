@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+//确认点单 传给后台的对象
 public class OrderRequestBody {
     private Integer userId;
     private Integer tableId;

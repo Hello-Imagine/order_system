@@ -25,6 +25,4 @@ public class Food {
     private Integer isLike;
 
     private Integer isAvailable;
-
-    private Integer sales;
 }

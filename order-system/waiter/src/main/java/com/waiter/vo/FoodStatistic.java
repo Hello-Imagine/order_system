@@ -15,4 +15,7 @@ public class FoodStatistic {
     private Integer category;
     private Float price;
     private Integer isLike;
+
+    private String image;
+    private Integer numFood;
 }
