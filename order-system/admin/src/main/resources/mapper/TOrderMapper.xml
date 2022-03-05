@@ -9,21 +9,6 @@
         delete from t_order where order_id = #{id}
     </delete>
 
-    <select id="listAll" resultType="com.example1.entity.TOrder">
-        select * from t_order
-    </select>
-
-    <select id="getById" resultType="com.example1.entity.TOrder">
-        select * from t_order where order_id = #{id}
-    </select>
-
-    <select id="selectByTableOrID" resultType="com.example1.entity.TOrder">
-        select * from t_order where table_id = #{id} or order_id = #{id}
-    </select>
-
-    <select id="selectByDate" resultType="com.example1.entity.TOrder">
-        select * from t_order where date_format(create_time,'%Y-%m-%d') like concat(#{date}, '%')
-    </select>
 
     <select id="listOrderFood" resultType="com.example1.entity.Food">
         select food.* from food_order natural join food
@@ -32,5 +17,27 @@
 
     <select id="selectOrderWaiter" resultType="com.example1.entity.User">
         select user.* from user natural join t_order where order_id = #{id}
+    </select>
+
+    <select id="listAll" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+    </select>
+
+    <select id="getById" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+        where order_id = #{id}
+    </select>
+
+    <select id="selectByTableOrID" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+        where table_id = #{id} or order_id = #{id}
+    </select>
+    <select id="selectByDate" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+        where date_format(create_time,'%Y-%m-%d') like concat(#{date}, '%')
     </select>
 </mapper>

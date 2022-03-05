@@ -5,6 +5,7 @@ import com.example1.entity.TOrder;
 import com.example1.entity.User;
 import com.example1.service.TOrderService;
 import com.example1.utils.JsonResponse;
+import com.example1.vo.OrderView;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +46,9 @@ public class TOrderController {
     //根据ID显示订单信息
     @RequestMapping("/get_by_id")
     public JsonResponse getById(Integer id){
-        TOrder order = tOrderService.getById(id);
-        if(order != null)
-            return JsonResponse.success(order);
+        OrderView orderView = tOrderService.getById(id);
+        if(orderView != null)
+            return JsonResponse.success(orderView);
         else
             return JsonResponse.failure("No such an order");
     }
@@ -59,7 +60,7 @@ public class TOrderController {
         if(id == null)
             return JsonResponse.success(tOrderService.listAll());
         // 如果输入条件不为空
-        List<TOrder> list = tOrderService.selectByTableOrID(id);
+        List<OrderView> list = tOrderService.selectByTableOrID(id);
         return JsonResponse.success(list);
     }
 
@@ -71,15 +72,16 @@ public class TOrderController {
         //点菜服务员
         User waiter = tOrderService.selectOrderWaiter(id);
         //订单基本信息
-        TOrder order = tOrderService.getById(id);
+//        TOrder order = tOrderService.getById(id);
 
-        return JsonResponse.success(new DetailInfo(foodList, waiter, order));
+//        return JsonResponse.success(new DetailInfo(foodList, waiter, order));
+        return JsonResponse.failure("test");
     }
 
     //根据订单创建日期查询订单
     @RequestMapping("/select_by_date")
     public JsonResponse selectByDate(Date date){
-        List<TOrder> list = tOrderService.selectByDate(date);
+        List<OrderView> list = tOrderService.selectByDate(date);
         if(list != null)
             return JsonResponse.success(list);
         else

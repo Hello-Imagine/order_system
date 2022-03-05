@@ -5,6 +5,7 @@ import com.example1.entity.TOrder;
 import com.example1.entity.User;
 import com.example1.mapper.TOrderMapper;
 import com.example1.service.TOrderService;
+import com.example1.vo.OrderView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,22 +28,22 @@ public class TOrderServiceImp implements TOrderService {
     }
 
     @Override
-    public List<TOrder> listAll() {
+    public List<OrderView> listAll() {
         return tOrderMapper.listAll();
     }
 
     @Override
-    public TOrder getById(Integer id) {
+    public OrderView getById(Integer id) {
         return tOrderMapper.getById(id);
     }
 
     @Override
-    public List<TOrder> selectByTableOrID(Integer id) {
+    public List<OrderView> selectByTableOrID(Integer id) {
         return tOrderMapper.selectByTableOrID(id);
     }
 
     @Override
-    public List<TOrder> selectByDate(Date date) {
+    public List<OrderView> selectByDate(Date date) {
         return tOrderMapper.selectByDate(date);
     }
 
