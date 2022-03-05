@@ -37,6 +37,8 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public Noticedetails noticedetails(Integer notice_id) {
         Noticedetails noticedetails = noticeMapper.queryNotice(notice_id);
+        //同时把该notice的状态变成已读
+        noticeMapper.updateStatus(notice_id);
         return noticedetails;
     }
 
