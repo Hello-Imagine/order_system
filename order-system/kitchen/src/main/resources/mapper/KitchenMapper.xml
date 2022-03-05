@@ -34,7 +34,7 @@
     </select>
 
     <select id="getNotice" resultType="com.kitchen.vo.Notice">
-        select n.notice_id, n.title, nu.status, n.content from user u join notice_user nu on u.user_id = nu.user_id
+        select n.notice_id, n.title, nu.status, n.content, n.create_time from user u join notice_user nu on u.user_id = nu.user_id
             join notice n on nu.notice_id = n.notice_id where u.user_id = #{userId};
     </select>
 

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -83,6 +84,12 @@ public class KitchenServiceImpl implements KitchenService {
         int userId = Integer.parseInt(data.get("user_id"));
         NoticeDetail noticeDetail = kitchenMapper.getNoticeDetail(userId);
         List<Notice> notice = kitchenMapper.getNotice(userId);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        for (Notice notice1 : notice) {
+            notice1.setCreateTimeStr(simpleDateFormat.format(notice1.getCreateTime()));
+        }
+
         noticeDetail.setNotices(notice);
 
         response.setData(noticeDetail);
