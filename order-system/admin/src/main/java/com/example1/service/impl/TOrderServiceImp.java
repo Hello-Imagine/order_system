@@ -56,4 +56,15 @@ public class TOrderServiceImp implements TOrderService {
     public User selectOrderWaiter(Integer id) {
         return tOrderMapper.selectOrderWaiter(id);
     }
+
+    @Override
+    public List<OrderView> todoList() {
+        return tOrderMapper.selectTodoList();
+    }
+
+    @Override
+    public List<OrderView> finishList() {
+        return tOrderMapper.selectFinishList();
+    }
+
 }

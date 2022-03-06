@@ -40,6 +40,13 @@
         where food_id = #{id}
     </update>
 
+
+    <update id="setNotLike">
+        update food set is_like = 0
+        where food_id = #{id}
+    </update>
+
+
     <select id="listAll" resultType="com.example1.entity.Food">
         select * from food
     </select>

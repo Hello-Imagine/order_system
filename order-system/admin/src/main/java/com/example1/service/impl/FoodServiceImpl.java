@@ -74,4 +74,9 @@ public class FoodServiceImpl implements FoodService {
     public List<FoodSales> selectTop3Food() {
         return foodMapper.selectTop3Food();
     }
+
+    @Override
+    public boolean setNotLike(Integer id) {
+        return foodMapper.setNotLike(id);
+    }
 }

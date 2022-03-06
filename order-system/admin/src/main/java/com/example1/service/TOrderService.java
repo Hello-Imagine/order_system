@@ -24,4 +24,8 @@ public interface TOrderService {
     List<Food> listOrderFood(Integer id);
 
     User selectOrderWaiter(Integer id);
+
+    List<OrderView> todoList();
+
+    List<OrderView> finishList();
 }

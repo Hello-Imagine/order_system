@@ -26,4 +26,8 @@ public interface TOrderMapper {
     List<Food> listOrderFood(Integer id);
 
     User selectOrderWaiter(Integer id);
+
+    List<OrderView> selectTodoList();
+
+    List<OrderView> selectFinishList();
 }

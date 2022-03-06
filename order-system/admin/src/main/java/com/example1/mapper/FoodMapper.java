@@ -32,4 +32,6 @@ public interface FoodMapper {
     List<FoodSales> selectTop3Food();
 
     boolean setLike(Integer id);
+
+    boolean setNotLike(Integer id);
 }

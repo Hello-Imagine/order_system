@@ -29,4 +29,6 @@ public interface FoodService{
     List<Food> fuzzySearchByName(String query);
 
     List<FoodSales> selectTop3Food();
+
+    boolean setNotLike(Integer id);
 }

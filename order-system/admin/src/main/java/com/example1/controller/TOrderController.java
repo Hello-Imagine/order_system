@@ -37,10 +37,16 @@ public class TOrderController {
         else return JsonResponse.failure("No such an order");
     }
 
-    //显示所有订单信息
-    @RequestMapping("/list")
-    public JsonResponse listAll(){
-        return JsonResponse.success(tOrderService.listAll());
+    //显示正在进行的订单
+    @RequestMapping("/todoList")
+    public JsonResponse todoList(){
+        return JsonResponse.success(tOrderService.todoList());
+    }
+
+    //显示已完成的订单
+    @RequestMapping("/finishList")
+    public JsonResponse finishList(){
+        return JsonResponse.success(tOrderService.finishList());
     }
 
     //根据ID显示订单信息

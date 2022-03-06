@@ -40,4 +40,14 @@
         from t_order natural join user
         where date_format(create_time,'%Y-%m-%d') like concat(#{date}, '%')
     </select>
+    <select id="selectTodoList" resultType="com.example1.vo.OrderView">
+        select order_id,t_order.user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order join user on t_order.user_id = user.user_id
+        where status not in (3,4)
+    </select>
+    <select id="selectFinishList" resultType="com.example1.vo.OrderView">
+        select order_id,t_order.user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order join user on t_order.user_id = user.user_id
+        where status in (3,4)
+    </select>
 </mapper>
