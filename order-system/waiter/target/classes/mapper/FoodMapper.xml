@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.waiter.mapper.FoodMapper">
+    <update id="updateDelivery">
+        update food_order
+        set delivery = 1
+        where order_id = #{order_id} and food_id =#{food_id};
+    </update>
+    <select id="selectAll" resultType="com.waiter.entity.Food">
+        select *
+        from food;
+    </select>
+
+    <select id="queryById" resultType="com.waiter.entity.Food">
+        select *
+        from food
+        where food_id = #{query};
+    </select>
+
+    <select id="queryByName" resultType="com.waiter.entity.Food">
+        select *
+        from food
+        where food_name like concat('%',#{query},'%');
+    </select>
+    <select id="queryFood" resultType="com.waiter.entity.Food">
+        select *
+        from food
+        where food_id = #{food_id};
+    </select>
+    <select id="queryTakeFood" resultType="com.waiter.vo.TakeFood">
+        select table_id,t_order.order_id,food.food_id,food_name,image,food_order.status, food_order.delivery
+        from t_order join food_order join food
+        where t_order.order_id = food_order.order_id and
+            food_order.food_id = food.food_id and user_id = #{user_id};
+    </select>
+
+
+</mapper>

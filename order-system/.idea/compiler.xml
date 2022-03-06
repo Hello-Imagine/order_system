@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="admin" />
+        <module name="images" />
+        <module name="waiter" />
+        <module name="menu" />
+        <module name="kitchen" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin" options="-parameters" />
+      <module name="images" options="-parameters" />
+      <module name="kitchen" options="-parameters" />
+      <module name="menu" options="-parameters" />
+      <module name="waiter" options="-parameters" />
+    </option>
+  </component>
+</project>

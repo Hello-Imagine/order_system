@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kitchen.mapper.KitchenMapper">
+    <insert id="addMessage">
+        insert into message(order_id, title, content, create_time)
+         values (#{orderId}, #{title}, #{content}, #{createTime});
+    </insert>
+
+    <insert id="insertMessage">
+        insert into message (order_id, title, content, create_time, send_user, receive_user, status)
+         values (#{orderId}, #{title}, #{content}, #{createTime}, #{sendUser}, #{receiveUser}, #{status});
+    </insert>
+
+    <update id="setNoticeRead">
+        update notice_user set status = 1 where user_id = #{userId} and notice_id = #{noticeId};
+    </update>
+
+    <update id="setFoodStatus">
+        update food_order set status = #{status} where order_id = #{orderId} and food_id = #{foodId};
+    </update>
+
+    <select id="getOrderDetailTitle" resultType="com.kitchen.vo.OrderDetailTitle">
+        select t_order.order_id, t_order.table_id, u.user_id, u.username, t_order.memo
+        from t_order join user u on t_order.user_id = u.user_id where t_order.order_id = #{orderId};
+    </select>
+
+    <select id="getFoodDetail" resultType="com.kitchen.vo.FoodDetail">
+        select f.food_id, f.food_name, fo.num_food, fo.status from food_order fo
+            join food f on fo.food_id = f.food_id where fo.order_id = #{orderId};
+    </select>
+
+    <select id="getNoticeDetail" resultType="com.kitchen.vo.NoticeDetail">
+        select user_id, username, portrait from user where user_id = #{userId};
+    </select>
+
+    <select id="getNotice" resultType="com.kitchen.vo.Notice">
+        select n.notice_id, n.title, nu.status, n.content, n.create_time from user u join notice_user nu on u.user_id = nu.user_id
+            join notice n on nu.notice_id = n.notice_id where u.user_id = #{userId};
+    </select>
+
+    <select id="getOrderId" resultType="java.lang.Integer">
+        select order_id from t_order;
+    </select>
+    <select id="getWaiterId" resultType="java.lang.Integer">
+        select user_id from user where role = 2;
+    </select>
+    <select id="getWaiterIdByOrderId" resultType="java.lang.Integer">
+        select user_id from t_order where order_id = #{orderId};
+    </select>
+</mapper>

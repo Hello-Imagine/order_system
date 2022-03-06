@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.waiter.mapper.OrderMapper">
+
+<!--    <insert id="insertOrder" useGeneratedKeys="true" keyProperty="order_id">-->
+<!--        insert into t_order (user_id, table_id, total_price, memo, status, create_time, num_people)-->
+<!--        values (#{user_id},#{table_id},#{total_price},#{memo},#{status},#{create_time},#{num_people});-->
+<!--    </insert>-->
+
+    <insert id="insertOrder" useGeneratedKeys="true" keyProperty="orderId" keyColumn="order_id">
+        insert into t_order (user_id,table_id,total_price,memo,status,create_time,num_people)
+        values (#{userId},#{tableId},#{totalPrice},#{memo},#{status},#{createTime},#{numPeople});
+    </insert>
+
+    <insert id="insertAssociation">
+        insert into food_order (order_id, food_id, num_food, status, delivery)
+        values (#{order_id},#{food_id},#{num_food},#{status},#{delivery});
+    </insert>
+    <update id="updateOrder">
+        update t_order
+        set status = 3, finish_time = #{finishTime}
+        where order_id = #{order_id};
+    </update>
+
+    <select id="queryById" resultType="com.waiter.entity.TOrder">
+        select *
+        from t_order
+        where order_id = #{order_id};
+    </select>
+    <select id="selectOrderToPay" resultType="com.waiter.entity.TOrder">
+        select *
+        from t_order
+        where user_id = #{user_id} and status &lt; 3;
+    </select>
+    <select id="selectOrderFood" resultType="com.waiter.vo.FoodStatistic">
+        select food_name,description,category,price,is_like,image,num_food
+        from food natural join food_order
+        where order_id = #{order_id};
+    </select>
+</mapper>

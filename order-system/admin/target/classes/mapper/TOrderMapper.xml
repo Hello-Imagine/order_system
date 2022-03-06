@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example1.mapper.TOrderMapper">
+    <update id="freeOrder">
+        update t_order set status = 4 where order_id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from t_order where order_id = #{id}
+    </delete>
+
+
+    <select id="listOrderFood" resultType="com.example1.entity.Food">
+        select food.* from food_order natural join food
+        where order_id = #{id}
+    </select>
+
+    <select id="selectOrderWaiter" resultType="com.example1.entity.User">
+        select user.* from user natural join t_order where order_id = #{id}
+    </select>
+
+    <select id="listAll" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+    </select>
+
+    <select id="getById" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+        where order_id = #{id}
+    </select>
+
+    <select id="selectByTableOrID" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+        where table_id = #{id} or order_id = #{id}
+    </select>
+    <select id="selectByDate" resultType="com.example1.vo.OrderView">
+        select order_id,user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order natural join user
+        where date_format(create_time,'%Y-%m-%d') like concat(#{date}, '%')
+    </select>
+    <select id="selectTodoList" resultType="com.example1.vo.OrderView">
+        select order_id,t_order.user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order join user on t_order.user_id = user.user_id
+        where status not in (3,4)
+    </select>
+    <select id="selectFinishList" resultType="com.example1.vo.OrderView">
+        select order_id,t_order.user_id, table_id, total_price, memo, status, create_time, finish_time, num_people, username
+        from t_order join user on t_order.user_id = user.user_id
+        where status in (3,4)
+    </select>
+</mapper>

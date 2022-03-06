@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.menu.mapper.MenuMapper">
+    <select id="getRootWaiterNoticeMenu" resultType="com.menu.entity.WaiterMenu">
+        select id, name, parent_id from waiter_menu where role = 2 and parent_id is NULL;
+    </select>
+    <select id="getAllWaiterNoticeMenu" resultType="com.menu.entity.WaiterMenu">
+        select id, name, parent_id from waiter_menu where role = 2 and parent_id is not null;
+    </select>
+    <select id="getAdministratorMenu" resultType="com.menu.entity.WaiterMenu">
+        select id, name, parent_id from waiter_menu where role = 1 and parent_id is null;
+    </select>
+    <select id="getAllAdministratorMenu" resultType="com.menu.entity.WaiterMenu">
+        select id, name, parent_id from waiter_menu where role = 1 and parent_id is not null;
+    </select>
+    <select id="getKitchenMenu" resultType="com.menu.entity.WaiterMenu">
+        select id, name, parent_id from waiter_menu where role = 3 and parent_id is NULL;
+    </select>
+    <select id="getAllKitchenMenu" resultType="com.menu.entity.WaiterMenu">
+        select id, name, parent_id from waiter_menu where role = 3 and parent_id is not null;
+    </select>
+</mapper>

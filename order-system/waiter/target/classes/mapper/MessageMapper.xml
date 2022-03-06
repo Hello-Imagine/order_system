@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.waiter.mapper.MessageMapper">
+    <update id="updateStatus">
+        update message
+        set status = 1
+        where message_id = #{message_id};
+    </update>
+
+    <select id="queryMessage" resultType="com.waiter.entity.Message">
+        select *
+        from message
+        where message_id = #{message_id}
+    </select>
+    <select id="querySenderName" resultType="java.lang.String">
+        select user.username
+        from message join user on message.send_user = user.user_id
+        where message_id = #{message_id};
+    </select>
+
+    <select id="selectAllMessage" resultType="com.waiter.vo.MessageDetails">
+        select message_id, order_id, title, content, create_time, send_user, receive_user, status, username
+        from message join user on message.send_user = user.user_id
+        where message.receive_user = #{receive_user};
+    </select>
+
+</mapper>
