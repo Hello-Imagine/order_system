@@ -4,8 +4,6 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>demo</module>
-        <module>demo2</module>
         <module>images</module>
         <module>admin</module>
         <module>waiter</module>
