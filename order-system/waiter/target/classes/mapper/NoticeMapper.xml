@@ -8,7 +8,7 @@
     </update>
 
     <select id="selectAllNotice" resultType="com.waiter.vo.NoticeList">
-        select notice_id, title, status, content
+        select notice_id, title, status, content, create_time
         from notice natural join notice_user
         where user_id = #{user_id};
     </select>
