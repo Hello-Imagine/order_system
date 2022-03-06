@@ -1,9 +1,11 @@
 package com.waiter.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.waiter.JsonResponse;
 import com.waiter.entity.TOrder;
 import com.waiter.service.FoodService;
 import com.waiter.service.OrderService;
+import com.waiter.util.GoEasyUtil;
 import com.waiter.vo.OrderDetails;
 import com.waiter.vo.OrderRequestBody;
 import com.waiter.vo.OrderView;
@@ -32,6 +34,16 @@ public class OrderController {
         for (OrderView a : orderRequestBody.getOrderViews()) {
             orderService.createAssociation(order_id,a.getFoodId(),a.getNumFood());
         }
+
+        // TODO: Zep add
+        // 长连接
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("orderId", order_id);
+        jsonObject.put("tableId", orderRequestBody.getTableId());
+        jsonObject.put("totalPrice", orderRequestBody.getTotalPrice());
+        jsonObject.put("numPeople", orderRequestBody.getNumPeople());
+        GoEasyUtil.publish(orderRequestBody.getUserId() + "", jsonObject.toJSONString());
+
         return JsonResponse.msg(1,"成功");
     }
 
