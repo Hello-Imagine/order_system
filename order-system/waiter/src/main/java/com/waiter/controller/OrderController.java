@@ -21,25 +21,6 @@ public class OrderController {
     @Autowired
     FoodService foodService;
 
-    //点餐页面
-//    @RequestMapping("/waiter/order")
-//    public JsonResponse order(@RequestParam(required = false) String query){
-//        if(query == null){
-//            List<Food> result = foodService.showAllFood();
-//            if(result==null){
-//                return JsonResponse.failure("数据库中不存在菜品信息");
-//            }
-//            return JsonResponse.success(result);
-//        }
-//        else{
-//            List<Food> result = foodService.showFood(query);
-//            if(result==null){
-//                return JsonResponse.failure("未找到菜品");
-//            }
-//            return JsonResponse.success(result);
-//        }
-//    }
-
     //确认点单 注意传入的 foodList 是菜品的id和对应数量的 map
     @PostMapping("/waiter/take_order")
     public JsonResponse takeOrder(@RequestBody OrderRequestBody orderRequestBody){
