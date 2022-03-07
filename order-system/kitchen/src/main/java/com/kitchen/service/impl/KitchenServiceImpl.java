@@ -1,8 +1,11 @@
 package com.kitchen.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
+import com.kitchen.entity.Food;
 import com.kitchen.entity.Message;
 import com.kitchen.mapper.KitchenMapper;
 import com.kitchen.service.KitchenService;
+import com.kitchen.util.GoEasyUtil;
 import com.kitchen.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -116,7 +119,24 @@ public class KitchenServiceImpl implements KitchenService {
         int orderId = Integer.parseInt(data.get("order_id"));
         int foodId = Integer.parseInt(data.get("food_id"));
         int status = Integer.parseInt(data.get("status"));
+        int tableId = Integer.parseInt(data.get("table_id"));
         kitchenMapper.setFoodStatus(orderId, foodId, status);
+
+        // 建立长连接, 实时传菜消息到微信小程序前端
+        // 根据订单编号获取服务员信息
+        int userId = kitchenMapper.getUserIdByOrderId(orderId);
+        // 获取 FoodId, image
+        Food food = kitchenMapper.getFoodByFoodId(foodId);
+        // channel 内容 jsonString
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("tableId", tableId);
+        jsonObject.put("orderId", orderId);
+        jsonObject.put("foodId", foodId);
+        jsonObject.put("foodName", food.getFoodName());
+        jsonObject.put("image", food.getImage());
+        jsonObject.put("status", 1);
+        // 发送实时消息
+        GoEasyUtil.publish(userId + "dishPass", jsonObject.toJSONString());
 
         JsonResponse<Object> response = new JsonResponse<>();
         response.setCode(1);
@@ -170,9 +190,22 @@ public class KitchenServiceImpl implements KitchenService {
         message.setCreateTime(new Date(Long.parseLong(data.get("create_time"))));
         message.setSendUser(Integer.parseInt(data.get("send_user")));
         message.setReceiveUser(Integer.parseInt(data.get("receive_user")));
-        message.setStatus(Integer.parseInt(data.get("status")));
+        message.setStatus(0);
 
         kitchenMapper.insertMessage(message);
+
+        // 建立长连接, 通知服务员后厨消息
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("messageId", message.getMessageId());
+        jsonObject.put("orderId", message.getOrderId());
+        jsonObject.put("title", message.getTitle());
+        jsonObject.put("content", message.getContent());
+        jsonObject.put("createTime", message.getCreateTime());
+        jsonObject.put("sendUser", message.getSendUser());
+        jsonObject.put("receiveUser", message.getReceiveUser());
+        jsonObject.put("status", message.getStatus());
+        jsonObject.put("senderName", kitchenMapper.getUserNameByUserId(message.getSendUser()));
+        GoEasyUtil.publish(data.get("receive_user") + "message", jsonObject.toJSONString());
 
         JsonResponse<Object> response = new JsonResponse<>();
         response.setCode(1);

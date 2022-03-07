@@ -1,5 +1,6 @@
 package com.kitchen.mapper;
 
+import com.kitchen.entity.Food;
 import com.kitchen.entity.Message;
 import com.kitchen.vo.FoodDetail;
 import com.kitchen.vo.Notice;
@@ -31,5 +32,25 @@ public interface KitchenMapper {
     Integer getWaiterIdByOrderId(int orderId);
 
     void insertMessage(Message message);
+
+    /**
+     * 根据订单 id 获取服务员 id
+     * @param orderId 订单 id
+     * @return 服务员 id
+     */
+    int getUserIdByOrderId(int orderId);
+
+    /**
+     * 根据 foodId 获取菜品详细信息
+     * @param foodId foodId
+     * @return 菜品详细信息
+     */
+    Food getFoodByFoodId(int foodId);
+
+    /**
+     * 根据 userId 获取用户名称
+     * @return 用户名称
+     */
+    String getUserNameByUserId(int userId);
 
 }

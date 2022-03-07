@@ -47,4 +47,16 @@
     <select id="getWaiterIdByOrderId" resultType="java.lang.Integer">
         select user_id from t_order where order_id = #{orderId};
     </select>
+
+    <select id="getUserIdByOrderId" resultType="java.lang.Integer">
+        select user_id from t_order where order_id = #{orderId};
+    </select>
+
+    <select id="getFoodByFoodId" resultType="com.kitchen.entity.Food">
+        select food_name, image from food where food_id = #{foodId};
+    </select>
+
+    <select id="getUserNameByUserId" resultType="java.lang.String">
+        select username from user where user_id = #{userId};
+    </select>
 </mapper>
