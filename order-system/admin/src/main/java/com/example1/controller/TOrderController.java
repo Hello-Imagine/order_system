@@ -9,6 +9,7 @@ import com.example1.vo.OrderView;
 import lombok.Data;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +31,7 @@ public class TOrderController {
     }
 
     //直接免单
-    @RequestMapping("/free")
+    @PostMapping("/free")
     public JsonResponse freeOrder(Integer id){
         if(tOrderService.freeOrder(id))
             return JsonResponse.success(null);
