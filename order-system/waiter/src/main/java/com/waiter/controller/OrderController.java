@@ -42,7 +42,7 @@ public class OrderController {
         jsonObject.put("tableId", orderRequestBody.getTableId());
         jsonObject.put("totalPrice", orderRequestBody.getTotalPrice());
         jsonObject.put("numPeople", orderRequestBody.getNumPeople());
-        GoEasyUtil.publish(orderRequestBody.getUserId() + "", jsonObject.toJSONString());
+        GoEasyUtil.publish("back-kitchen", jsonObject.toJSONString());
 
         return JsonResponse.msg(1,"成功");
     }
