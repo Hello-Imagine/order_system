@@ -79,10 +79,13 @@ public class TOrderController {
         //点菜服务员
         User waiter = tOrderService.selectOrderWaiter(id);
         //订单基本信息
-//        TOrder order = tOrderService.getById(id);
+        OrderView order = tOrderService.getById(id);
 
-//        return JsonResponse.success(new DetailInfo(foodList, waiter, order));
-        return JsonResponse.failure("test");
+        if(order == null){
+            return JsonResponse.failure("test");
+        }
+        return JsonResponse.success(new DetailInfo(foodList, waiter, order));
+
     }
 
     //根据订单创建日期查询订单
@@ -100,9 +103,9 @@ public class TOrderController {
     private class DetailInfo{
         List<Food> foodList;
         User waiter;
-        TOrder order;
+        OrderView order;
 
-        public DetailInfo(List<Food> foodList, User waiter, TOrder order) {
+        public DetailInfo(List<Food> foodList, User waiter, OrderView order) {
             this.foodList = foodList;
             this.waiter = waiter;
             this.order = order;
