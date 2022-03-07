@@ -17,7 +17,7 @@ public class OrderServiceImpl implements OrderService {
     public List<TOrder> showUnfinished() {
 
         //选出未出餐的订单的id
-        //两表联查 只要存在delivery=0 说明存在未传菜的菜品 说明为出餐
+        //两表联查 food的status !=2 说明存在未烹饪完成的菜品 说明为出餐
         List<Integer> unfinished = orderMapper.selectOrderId();
 
         //根据order_id 选出order
@@ -28,7 +28,7 @@ public class OrderServiceImpl implements OrderService {
     public List<TOrder> showFinished() {
 
         //选出未出餐的订单的id
-        //两表联查 只要存在delivery=0 说明存在未传菜的菜品 说明为出餐
+        //两表联查 food的status !=2 说明存在未烹饪完成的菜品 说明为出餐
         List<Integer> unfinished = orderMapper.selectOrderId();
 
         //不是未出餐的肯定就是出餐的了 很合理

@@ -5,7 +5,7 @@
     <select id="selectOrderId" resultType="java.lang.Integer" >
         select distinct t_order.order_id
         from t_order join food_order on t_order.order_id = food_order.order_id
-        where delivery = 0;
+        where food_order.status != 2;
     </select>
     <select id="selectFinished" resultType="com.kitchen.entity.TOrder">
         select order_id,user_id,table_id,total_price,memo,status,create_time,finish_time,num_people
