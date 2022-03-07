@@ -13,20 +13,12 @@ import java.time.LocalDateTime;
 @ToString
 public class TOrder {
     private Integer orderId;
-
     private Integer userId;
-
     private Integer tableId;
-
     private Float totalPrice;
-
     private String memo;
-
     private Integer status;
-
     private LocalDateTime createTime;
-
     private LocalDateTime finishTime;
-
     private Integer numPeople;
 }
