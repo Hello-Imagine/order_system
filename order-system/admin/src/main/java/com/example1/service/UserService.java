@@ -31,4 +31,6 @@ public interface UserService {
 
     //查找销量前三的服务员
     public List<UserSales> selectTop3Waiter();
+
+    boolean checkEmail(String email);
 }

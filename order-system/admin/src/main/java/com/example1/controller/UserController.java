@@ -51,6 +51,11 @@ public class UserController {
             user.setPortrait(image);
         }
 
+        String email = user.getEmail();
+        if(userService.checkEmail(email)){
+            return JsonResponse.failure("the email has been registered");
+        }
+
         if(userService.insert(user))
             return JsonResponse.success(user);
         else return JsonResponse.failure("failed to insert. Check the field of user.");

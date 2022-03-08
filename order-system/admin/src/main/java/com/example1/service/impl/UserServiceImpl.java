@@ -59,4 +59,11 @@ public class UserServiceImpl implements UserService {
     public List<UserSales> selectTop3Waiter() {
         return userMapper.selectTop3Waiter();
     }
+
+    @Override
+    public boolean checkEmail(String email) {
+        User result = null;
+        result = userMapper.selectByEmail(email);
+        return result != null;
+    }
 }

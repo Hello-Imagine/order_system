@@ -31,7 +31,7 @@
         select table_id,t_order.order_id,food.food_id,food_name,image,food_order.status, food_order.delivery
         from t_order join food_order join food
         where t_order.order_id = food_order.order_id and
-            food_order.food_id = food.food_id and user_id = #{user_id};
+            food_order.food_id = food.food_id and user_id = #{user_id} and delivery = 0;
     </select>
 
 

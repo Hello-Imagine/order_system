@@ -24,4 +24,5 @@ public interface UserMapper {
     List<User> listByRole(Integer role);
 
     List<UserSales> selectTop3Waiter();
+
 }

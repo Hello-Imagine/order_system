@@ -11,20 +11,12 @@ import lombok.ToString;
 @ToString
 public class User {
     private Integer userId;
-
     private String username;
-
     private String password;
-
     private String portrait;
-
     private Integer role;
-
     private String phone;
-
     private Float salary;
-
     private Float bonus;
-
     private String email;
 }
