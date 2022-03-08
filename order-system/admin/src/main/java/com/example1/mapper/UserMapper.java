@@ -15,6 +15,7 @@ public interface UserMapper {
     boolean update(User user);
 
     User selectById(Integer id);
+    User selectByEmail(String email);
 
     List<User> listAll();
 

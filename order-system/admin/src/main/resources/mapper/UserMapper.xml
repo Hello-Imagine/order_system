@@ -25,7 +25,7 @@
     </update>
 
     <select id="selectById" parameterType="int" resultType="com.example1.entity.User">
-        select * from user where user_id = #{id}
+        select * from user where user_id = #{id};
     </select>
 
     <select id="listAll" resultType="com.example1.entity.User">
@@ -48,5 +48,9 @@
             from user natural join t_order
             group by user_id) as waiter_order_num
         order by sales desc
+    </select>
+
+    <select id="selectByEmail" resultType="com.example1.entity.User">
+        select * from user where email = #{email};
     </select>
 </mapper>

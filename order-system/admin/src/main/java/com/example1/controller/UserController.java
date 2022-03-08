@@ -23,8 +23,8 @@ public class UserController {
 
     //员工登录
     @RequestMapping("/index")
-    public JsonResponse login(Integer user_id, String password){
-        User user = userService.selectById(user_id);
+    public JsonResponse login(String email, String password){
+        User user = userService.selectByEmail(email);
 
         if (user == null)
             return JsonResponse.failure("1");

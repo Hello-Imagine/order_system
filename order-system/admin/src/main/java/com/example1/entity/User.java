@@ -25,4 +25,6 @@ public class User {
     private Float salary;
 
     private Float bonus;
+
+    private String email;
 }

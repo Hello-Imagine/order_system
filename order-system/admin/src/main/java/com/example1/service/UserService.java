@@ -17,6 +17,8 @@ public interface UserService {
 
     //根据ID查询员工
     public User selectById(Integer id);
+    //根据email查询员工
+    public User selectByEmail(String email);
 
     //显示所有员工信息
     public List<User> listAll();
