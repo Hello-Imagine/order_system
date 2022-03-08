@@ -6,7 +6,7 @@
          values (#{orderId}, #{title}, #{content}, #{createTime});
     </insert>
 
-    <insert id="insertMessage">
+    <insert id="insertMessage" useGeneratedKeys="true" keyProperty="messageId">
         insert into message (order_id, title, content, create_time, send_user, receive_user, status)
          values (#{orderId}, #{title}, #{content}, #{createTime}, #{sendUser}, #{receiveUser}, #{status});
     </insert>

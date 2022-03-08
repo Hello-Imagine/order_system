@@ -192,20 +192,22 @@ public class KitchenServiceImpl implements KitchenService {
         message.setReceiveUser(Integer.parseInt(data.get("receive_user")));
         message.setStatus(0);
 
-        kitchenMapper.insertMessage(message);
+        int messageId = kitchenMapper.insertMessage(message);
+        System.out.println(messageId);
 
         // 建立长连接, 通知服务员后厨消息
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("messageId", message.getMessageId());
-        jsonObject.put("orderId", message.getOrderId());
-        jsonObject.put("title", message.getTitle());
-        jsonObject.put("content", message.getContent());
-        jsonObject.put("createTime", message.getCreateTime());
-        jsonObject.put("sendUser", message.getSendUser());
-        jsonObject.put("receiveUser", message.getReceiveUser());
-        jsonObject.put("status", message.getStatus());
-        jsonObject.put("senderName", kitchenMapper.getUserNameByUserId(message.getSendUser()));
-        GoEasyUtil.publish(data.get("receive_user") + "message", jsonObject.toJSONString());
+//        JSONObject jsonObject = new JSONObject();
+//        // TODO: 更改 messageId
+//        jsonObject.put("messageId", message.getMessageId());
+//        jsonObject.put("orderId", message.getOrderId());
+//        jsonObject.put("title", message.getTitle());
+//        jsonObject.put("content", message.getContent());
+//        jsonObject.put("createTime", message.getCreateTime());
+//        jsonObject.put("sendUser", message.getSendUser());
+//        jsonObject.put("receiveUser", message.getReceiveUser());
+//        jsonObject.put("status", message.getStatus());
+//        jsonObject.put("senderName", kitchenMapper.getUserNameByUserId(message.getSendUser()));
+//        GoEasyUtil.publish(data.get("receive_user") + "message", jsonObject.toJSONString());
 
         JsonResponse<Object> response = new JsonResponse<>();
         response.setCode(1);

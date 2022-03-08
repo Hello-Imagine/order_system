@@ -31,7 +31,7 @@ public interface KitchenMapper {
     List<Integer> getWaiterId();
     Integer getWaiterIdByOrderId(int orderId);
 
-    void insertMessage(Message message);
+    int insertMessage(Message message);
 
     /**
      * 根据订单 id 获取服务员 id
