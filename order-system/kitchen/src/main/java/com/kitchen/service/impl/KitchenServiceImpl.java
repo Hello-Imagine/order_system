@@ -198,7 +198,6 @@ public class KitchenServiceImpl implements KitchenService {
 
         // 建立长连接, 通知服务员后厨消息
         JSONObject jsonObject = new JSONObject();
-        // TODO: 更改 messageId
         jsonObject.put("messageId", messageId);
         jsonObject.put("orderId", message.getOrderId());
         jsonObject.put("title", message.getTitle());
