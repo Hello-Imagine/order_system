@@ -121,21 +121,24 @@ public class KitchenServiceImpl implements KitchenService {
         int tableId = Integer.parseInt(data.get("table_id"));
         kitchenMapper.setFoodStatus(orderId, foodId, status);
 
-        // 建立长连接, 实时传菜消息到微信小程序前端
-        // 根据订单编号获取服务员信息
-        int userId = kitchenMapper.getUserIdByOrderId(orderId);
-        // 获取 FoodId, image
-        Food food = kitchenMapper.getFoodByFoodId(foodId);
-        // channel 内容 jsonString
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("tableId", tableId);
-        jsonObject.put("orderId", orderId);
-        jsonObject.put("foodId", foodId);
-        jsonObject.put("foodName", food.getFoodName());
-        jsonObject.put("image", food.getImage());
-        jsonObject.put("status", 1);
-        // 发送实时消息
-        GoEasyUtil.publish(userId + "dishPass", jsonObject.toJSONString());
+        // 烹饪完成才发送实时消息
+        if (status == 2) {
+            // 建立长连接, 实时传菜消息到微信小程序前端
+            // 根据订单编号获取服务员信息
+            int userId = kitchenMapper.getUserIdByOrderId(orderId);
+            // 获取 FoodId, image
+            Food food = kitchenMapper.getFoodByFoodId(foodId);
+            // channel 内容 jsonString
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("tableId", tableId);
+            jsonObject.put("orderId", orderId);
+            jsonObject.put("foodId", foodId);
+            jsonObject.put("foodName", food.getFoodName());
+            jsonObject.put("image", food.getImage());
+            jsonObject.put("status", 1);
+            // 发送实时消息
+            GoEasyUtil.publish(userId + "dishPass", jsonObject.toJSONString());
+        }
 
         JsonResponse<Object> response = new JsonResponse<>();
         response.setCode(1);
