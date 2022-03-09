@@ -16,11 +16,21 @@ public class KitchenController {
     @Autowired
     private KitchenService kitchenService;
 
+    /**
+     * 消息编辑页面
+     * @param data 消息表单
+     * @return json
+     */
     @PostMapping("/back-kitchen/notify")
     public Map<String, String> notifyWaiter(@RequestParam Map<String, String> data) {
         return kitchenService.postMessage(data);
     }
 
+    /**
+     * 获取订单详情
+     * @param data 订单详情信息
+     * @return json
+     */
     @GetMapping("/back-kitchen/detail")
     public JsonResponse<OrderDetail> getDetail(@RequestParam Map<String, String> data) {
         return kitchenService.getOrderDetail(data);
@@ -36,6 +46,11 @@ public class KitchenController {
         return kitchenService.setFoodStatus(data);
     }
 
+    /**
+     * 获取实时公告
+     * @param data 后厨用户 userId
+     * @return json
+     */
     @GetMapping("/back-kitchen/notice")
     public JsonResponse<NoticeDetail> getNotice(@RequestParam Map<String, String> data) {
         return kitchenService.getNotice(data);
@@ -77,6 +92,11 @@ public class KitchenController {
         return kitchenService.getWaiterIdByOrderId(data);
     }
 
+    /**
+     * 后厨通知服务员消息
+     * @param data 消息内容
+     * @return json
+     */
     @PostMapping("/back-kitchen/message")
     public JsonResponse<Object> getMessage(@RequestParam Map<String, String> data) {
         return kitchenService.getMessage(data);
