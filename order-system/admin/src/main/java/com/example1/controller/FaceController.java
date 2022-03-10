@@ -19,8 +19,11 @@ public class FaceController {
     private FaceService faceService;
 
     @PostMapping("/face/upload")
-    public JsonResponse<Object> faceUpload(MultipartFile file) throws IOException {
-        return faceService.faceContrast(file);
+    public JsonResponse<Object> faceUpload(String user_id, MultipartFile file) throws IOException {
+        System.out.println(user_id);
+        System.out.println(file.getSize());
+        return faceService.faceContrast(user_id, file);
+//        return JsonResponse.success("null", "成功");
     }
 
 }

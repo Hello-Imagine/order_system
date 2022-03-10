@@ -7,6 +7,6 @@ import java.io.IOException;
 
 public interface FaceService {
 
-    JsonResponse<Object> faceContrast(MultipartFile file) throws IOException;
+    JsonResponse<Object> faceContrast(String userId, MultipartFile file) throws IOException;
 
 }

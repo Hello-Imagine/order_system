@@ -53,5 +53,8 @@
     <select id="selectByEmail" resultType="com.example1.entity.User">
         select * from user where email = #{email};
     </select>
+    <select id="getImagePathByUserId" resultType="java.lang.String">
+        select image_path from user where user_id = #{userId};
+    </select>
 
 </mapper>

@@ -25,4 +25,6 @@ public interface UserMapper {
 
     List<UserSales> selectTop3Waiter();
 
+    String getImagePathByUserId(Integer userId);
+
 }
