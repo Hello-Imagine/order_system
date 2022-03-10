@@ -20,4 +20,5 @@ public class User {
     private Float bonus;
     private String email;
     private String imagePath;
+    private String imageBase64;
 }

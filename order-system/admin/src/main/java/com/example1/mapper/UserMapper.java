@@ -27,4 +27,6 @@ public interface UserMapper {
 
     String getImagePathByUserId(Integer userId);
 
+    void updateUserByUserId(String image);
+
 }

@@ -23,6 +23,9 @@
             <if test="userId !=null"> user_id = #{userId} </if>
         where user_id = #{userId}
     </update>
+    <update id="updateUserByUserId">
+        update user set image_base64 = #{image} where user_id = 1;
+    </update>
 
     <select id="selectById" parameterType="int" resultType="com.example1.entity.User">
         select * from user where user_id = #{id};
