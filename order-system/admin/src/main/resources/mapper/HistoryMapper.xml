@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example1.mapper.HistoryMapper">
+    <select id="selectTotalFoodSales" resultType="java.lang.Integer">
+        select sum(sales)
+        from food natural join (
+            select food_id, sum(num_food) as sales
+            from food_order
+            group by food_id) as food_order_num
+    </select>
+    <select id="selectTopFood" resultType="com.example1.vo.HistoryFood">
+        select food_name, food_id, sales, sales/#{totalSale} as percent
+        from food natural join (
+            select food_id, sum(num_food) as sales
+            from food_order
+            group by food_id) as food_order_num
+        order by sales desc
+    </select>
+    <select id="selectTotalWaiterSales" resultType="java.lang.Integer">
+        select sum(sales)
+        from user natural join (
+            select user_id, count(order_id) as sales
+            from user natural join t_order
+            group by user_id) as waiter_order_num
+    </select>
+    <select id="selectTopWaiter" resultType="com.example1.vo.HistoryWaiter">
+        select username, user_id, sales, sales/#{totalSale} as percent
+        from user natural join (
+            select user_id, count(order_id) as sales
+            from user natural join t_order
+            group by user_id) as waiter_order_num
+        order by sales desc
+    </select>
+    <select id="selectTodaySale" resultType="java.lang.Integer">
+        select sum(sales)
+        from food natural join (
+            select food_id, sum(num_food) as sales
+            from (select food_id, num_food
+                  from food_order join t_order on t_order.order_id = food_order.order_id
+                  where  1=1
+                  <if test="create_time != null and create_time != ''">
+                      and substr(concat(create_time), 1, 10) = #{today}
+                  </if>) as food_order_today
+            group by food_id) as food_order_num
+    </select>
+    <select id="selectSaleNum" resultType="com.example1.vo.HistorySale">
+        select date_format(create_time, '%Y-%m-%d') as time, sum(num_food) as nums
+        from food_order join t_order on t_order.order_id = food_order.order_id
+        where 1 = 1
+        <if test="start != null and end != null and start != '' and end != ''">
+            And create_time
+            between DATE_FORMAT(#{start,jdbcType=VARCHAR}, "%Y-%m-%d")
+            AND DATE_FORMAT(#{end,jdbcType=VARCHAR}, "%Y-%m-%d")
+        </if>
+        group by date_format(create_time, '%Y-%m-%d')
+    </select>
+    <select id="selectSales" resultType="com.example1.vo.HistorySale">
+        select date_format(create_time, '%Y-%m-%d') as time, sum(price * num_food) as sales
+        from food_order join t_order on t_order.order_id = food_order.order_id join food on food.food_id = food_order.food_id
+        where 1 = 1
+        <if test="start != null and end != null and start != '' and end != ''">
+            And create_time
+            between DATE_FORMAT(#{start,jdbcType=VARCHAR}, "%Y-%m-%d")
+            AND DATE_FORMAT(#{end,jdbcType=VARCHAR}, "%Y-%m-%d")
+        </if>
+        group by date_format(create_time, '%Y-%m-%d')
+    </select>
+</mapper>
+
