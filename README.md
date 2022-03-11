@@ -75,3 +75,15 @@
     * 服务员菜单
     * 后厨菜单
 
+---
+
+# 页面展示
+
+* 登录
+  * ![img](C:\Users\曾平\AppData\Roaming\Typora\typora-user-images\263394FBE846B93707555B07B73BACDF.png)
+* 管理员模块
+  * ![InkedQQ图片20220311165832_LI](C:\Users\曾平\AppData\Roaming\Typora\typora-user-images\InkedQQ图片20220311165832_LI.jpg)
+  * ![img](C:\Users\曾平\AppData\Roaming\Typora\typora-user-images\BA1B5419FC64A63327B86B4417513B8B.png)
+* 服务员模块
+  * <img src="C:\Users\曾平\AppData\Roaming\Typora\typora-user-images\559933E54415027EB4BF9ED2E980E60B.jpg" alt="img" style="zoom: 25%;" />
+* 后厨模块
