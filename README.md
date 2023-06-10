@@ -83,6 +83,9 @@
 * 管理员模块
   * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/1.png)
   * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/3.png)
+  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/10.png)
+* 后厨模块
+  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/20.png)
+  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/21.png)
 * 服务员模块
   * <img src="https://github.com/Hello-Imagine/order_system/blob/main/images/4.png" alt="img" style="zoom: 25%;" />
-* 后厨模块
