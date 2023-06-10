@@ -96,32 +96,32 @@
 
 ---
 
-## Project Pages
+## Project Overview
 <!-- 
 * 登录
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/2.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/2.png)
 * 管理员模块
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/1.png)
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/3.png)
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/10.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/1.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/3.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/10.png)
 * 后厨模块
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/20.png)
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/21.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/20.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/21.png)
 * 服务员模块
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/40.png) 
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/40.png) 
 -->
 
 * Login
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/2.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/2.png)
 
 * Administrator Module
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/1.png)
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/3.png)
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/10.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/1.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/3.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/10.png)
 
 * Kitchen Module
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/20.png)
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/21.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/20.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/21.png)
 
 * Waiter Module
-  * ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/40.png)
+  ![img](https://github.com/Hello-Imagine/order_system/blob/main/images/40.jpg)
